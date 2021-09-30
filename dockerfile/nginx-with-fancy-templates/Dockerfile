@@ -1,14 +1,15 @@
-FROM ubuntu:xenial
+FROM openeuler/openeuler:20.03
 MAINTAINER tommylike <tommylikehu@gmail.com>
 # Set env
 USER root
 ENV USER root
 
-RUN apt -y update \
-    && apt install -y wget \
-    && apt install -y git \
-    && apt install -y make build-essential libpcre3 libpcre3-dev openssl libssl-dev software-properties-common openssh-server tzdata\
-    && rm -rf /var/lib/{apt,dpkg,cache,log}/
+RUN alias rm="rm" && \
+    yum update && \
+    yum install -y wget && \
+    yum install -y tar && \
+    yum install -y git && \
+    yum install -y make automake autoconf libtool gcc gcc-c++ kernel-devel libmaxminddb-devel pcre-devel openssl openssl-devel
 
 # prepare nginx
 RUN wget http://nginx.org/download/nginx-1.20.0.tar.gz \
