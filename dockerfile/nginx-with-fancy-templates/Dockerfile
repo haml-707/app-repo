@@ -9,7 +9,9 @@ RUN alias rm="rm" && \
     yum install -y wget && \
     yum install -y tar && \
     yum install -y git && \
-    yum install -y make automake autoconf libtool gcc gcc-c++ kernel-devel libmaxminddb-devel pcre-devel openssl openssl-devel
+    yum install -y make automake autoconf libtool gcc gcc-c++ kernel-devel libmaxminddb-devel pcre-devel openssl openssl-devel tzdata && \
+    yum install -y createrepo && \
+    rm -rf /var/lib/{apt,dpkg,cache,log}/
 
 # prepare nginx
 RUN wget http://nginx.org/download/nginx-1.20.0.tar.gz \
