@@ -11,6 +11,7 @@ RUN alias rm="rm" && \
     yum install -y git && \
     yum install -y make automake autoconf libtool gcc gcc-c++ kernel-devel libmaxminddb-devel pcre-devel openssl openssl-devel tzdata && \
     yum install -y createrepo && \
+    yum install -y openssh-clients && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/
 
 # prepare nginx
