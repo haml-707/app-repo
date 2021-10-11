@@ -9,6 +9,7 @@ RUN yum update && \
     yum install -y net-tools && \
     yum install -y createrepo && \
     yum install -y vim && \
+    yum install -y openssh-clients && \
     yum install -y openssh-server
 
 
