@@ -1,9 +1,9 @@
-FROM alpine:3.12.1
+FROM openeuler/openeuler:20.03
 MAINTAINER tommylikehu@gmail.com
 
 # install rsync and tini
-RUN apk update && apk add tini rsync htop tzdata
-
+RUN yum -y update && apk yum install -y rsync tzdata
+COPY tini /usr/local/bin
 ENV TZ="Asia/Shanghai"
 COPY entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["tini", "--"]
