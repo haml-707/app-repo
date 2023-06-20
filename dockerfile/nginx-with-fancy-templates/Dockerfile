@@ -5,7 +5,7 @@ USER root
 ENV USER root
 
 RUN alias rm="rm" && \
-    yum update && \
+    yum update -y && \
     yum install -y wget && \
     yum install -y tar && \
     yum install -y git && \
@@ -29,5 +29,7 @@ RUN cd nginx-1.20.0 \
 
 # Copy templates into /etc/nginx/conf/static
 ADD ./fancySource/openEuler /etc/nginx/conf/static/fancySource
+COPY ./nginx/nginx.conf /etc/nginx/conf/nginx.conf
+COPY ./nginx/default.conf /etc/nginx/conf/conf.d/default.conf
 ENV PATH="/etc/nginx/sbin:${PATH}"
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
