@@ -5,7 +5,7 @@ USER root
 ENV USER root
 
 RUN alias rm="rm" && \
-    yum update && \
+    yum update -y && \
     yum install -y wget && \
     yum install -y tar && \
     yum install -y git && \
