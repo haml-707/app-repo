@@ -53,7 +53,14 @@ RUN touch /var/run/nginx.pid \
     && chmod 550 /etc/nginx/modules \
     && chmod 440 /etc/nginx/modules/* \
     && chmod 550 /etc/nginx/fancySource \
-    && chmod 440 /etc/nginx/fancySource/* \
+    && chmod 550 /etc/nginx/fancySource/css \
+    && chmod 440 /etc/nginx/fancySource/css/* \
+    && chmod 550 /etc/nginx/fancySource/img \
+    && chmod 440 /etc/nginx/fancySource/img/* \
+    && chmod 550 /etc/nginx/fancySource/img/footer \
+    && chmod 440 /etc/nginx/fancySource/img/footer/* \
+    && chmod 440 /etc/nginx/fancySource/footer.html \
+    && chmod 440 /etc/nginx/fancySource/header.html \
     && chmod 440 /etc/nginx/nginx.conf \
     && chmod 440 /etc/nginx/mime.types \
     && rm -rf /usr/share/nginx/html/ \
